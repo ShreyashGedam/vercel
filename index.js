@@ -1,4 +1,5 @@
 const express = require("express");
+const profileRouter = require("./routes/profile.route");
 
 const app = express();
 const PORT = 4000;
@@ -14,5 +15,7 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.send("This is my about route..... ");
 });
+
+app.use("/profile", profileRouter);
 
 module.exports = app;
